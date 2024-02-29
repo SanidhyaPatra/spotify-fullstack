@@ -44,6 +44,7 @@ const UploadModal = () => {
         >
             <form
                 onSubmit={handleSubmit(onSubmit)}
+                className="flex flex-col gap-y-4"
             >
                 <Input 
                     id="title"
@@ -51,6 +52,24 @@ const UploadModal = () => {
                     {...register('title', { required: true})}
                     placeholder="Song Title"
                 />
+                <Input 
+                    id="author"
+                    disabled={isLoading}
+                    {...register('author', { required: true})}
+                    placeholder="Song Title"
+                />
+                <div>
+                    <div className="pb-1">
+                        Select a song file
+                    </div>
+                    <Input 
+                        id="song"
+                        type="file"
+                        disabled={isLoading}
+                        accept=".mp3"
+                        {...register('song', { required: true})}
+                    />
+                </div>
             </form>
         </Modal>
     );
