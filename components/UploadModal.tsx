@@ -110,7 +110,7 @@ const UploadModal = () => {
             setIsLoading(false);
             toast.success('Song uploaded');
             uploadModal.onClose();
-            
+
         } catch (error) {
             toast.error("Something went wrong");
         } finally {
@@ -139,7 +139,7 @@ const UploadModal = () => {
                     id="author"
                     disabled={isLoading}
                     {...register('author', { required: true})}
-                    placeholder="Song Title"
+                    placeholder="Song Author"
                 />
                 <div>
                     <div className="pb-1">
